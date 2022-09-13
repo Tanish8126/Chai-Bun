@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "1054568346467",
+    "project_id": "chaibunf-311ce",
+    "storage_bucket": "chaibunf-311ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1054568346467:android:5348ec9106e2fcef9f9956",
+        "android_client_info": {
+          "package_name": "com.chaibun.newcbapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1054568346467-fkatugs1k0t3etgae1fis2t5ra4nv553.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.chaibun.newcbapp",
+            "certificate_hash": "f6f7ba352bbad3a2a38cd3e26b891009dbec9c4e"
+          }
+        },
+        {
+          "client_id": "1054568346467-s2mvr05d3oboh04gkrerp598rgb19emf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.chaibun.newcbapp",
+            "certificate_hash": "2070ff2a0658806124876e0039f00252c350fb3f"
+          }
+        },
+        {
+          "client_id": "1054568346467-ahbt9pgl7emdbq00mje9kfs8ali3lsao.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYIP0Znu_rSGIm82iWLtjzwS86qMS4PL0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1054568346467-ahbt9pgl7emdbq00mje9kfs8ali3lsao.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1054568346467-0s43ee4vu90udoaa641eo6tnn9s5udj2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.newcbapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
