@@ -4,20 +4,19 @@ import 'package:flutter/material.dart';
 import '../../../utils/constants.dart';
 import '../../../utils/size_config.dart';
 
-class container extends StatefulWidget {
-  const container({
-    Key? key,
-  }) : super(key: key);
+class NewContainer extends StatefulWidget {
+  const NewContainer({Key? key}) : super(key: key);
 
   @override
-  State<container> createState() => _containerState();
+  State<NewContainer> createState() => _NewContainerState();
 }
 
-class _containerState extends State<container> {
-  CollectionReference _referenceProductList =
+class _NewContainerState extends State<NewContainer> {
+  final CollectionReference _referenceProductList =
       FirebaseFirestore.instance.collection('product_list');
   late Stream<QuerySnapshot> _streamProductItems;
 
+  @override
   initState() {
     super.initState();
     _streamProductItems = _referenceProductList.snapshots();
@@ -38,7 +37,7 @@ class _containerState extends State<container> {
           }
           //return Center(child: CircularProgressIndicator());
           return Container(
-            margin: EdgeInsets.symmetric(
+            margin: const EdgeInsets.symmetric(
               horizontal: defaultPadding,
               vertical: defaultPadding / 2,
             ),
@@ -51,7 +50,7 @@ class _containerState extends State<container> {
                       color: kPrimaryColor,
                       borderRadius: BorderRadius.circular(22)),
                   child: Container(
-                    margin: EdgeInsets.only(left: 10, right: 10),
+                    margin: const EdgeInsets.only(left: 10, right: 10),
                     decoration: BoxDecoration(
                         color: kMainColor,
                         borderRadius: BorderRadius.circular(22)),
@@ -60,7 +59,7 @@ class _containerState extends State<container> {
                 Positioned(
                   child: Container(
                     height: 100,
-                    margin: EdgeInsets.only(bottom: 30, right: 185),
+                    margin: const EdgeInsets.only(bottom: 30, right: 185),
                     width: 100,
                     child: Image.asset(
                       "assets/images/product.png",
@@ -71,13 +70,13 @@ class _containerState extends State<container> {
                   child: Container(
                     height: 28,
                     width: 80,
-                    margin: EdgeInsets.only(bottom: 38, left: 200),
+                    margin: const EdgeInsets.only(bottom: 38, left: 200),
                     decoration: BoxDecoration(
                         border: Border.all(color: kPrimaryColor),
                         borderRadius: BorderRadius.circular(10)),
                     child: Row(children: [
                       Container(
-                        child: Icon(
+                        child: const Icon(
                           Icons.remove,
                           color: kPrimaryColor,
                         ),
@@ -86,7 +85,7 @@ class _containerState extends State<container> {
                         height: double.infinity,
                         width: 30,
                         color: kPrimaryColor,
-                        child: Center(
+                        child: const Center(
                             child: FittedBox(
                           child: Text(
                             '1',
@@ -97,7 +96,7 @@ class _containerState extends State<container> {
                         )),
                       ),
                       Container(
-                        child: Icon(
+                        child: const Icon(
                           Icons.add,
                           color: kPrimaryColor,
                         ),
@@ -114,7 +113,7 @@ class _containerState extends State<container> {
                       padding: const EdgeInsets.only(top: 33, left: 60),
                       child: Text.rich(
                         TextSpan(
-                          style: TextStyle(color: kPrimaryColor),
+                          style: const TextStyle(color: kPrimaryColor),
                           children: [
                             TextSpan(
                                 text: "Regular Chai\n",
@@ -132,13 +131,13 @@ class _containerState extends State<container> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(top: 9, left: 0),
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 13, vertical: 4),
+                      margin: const EdgeInsets.only(top: 9, left: 0),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 13, vertical: 4),
                       decoration: BoxDecoration(
                           color: kPrimaryColor,
                           borderRadius: BorderRadius.circular(22)),
-                      child: Text(
+                      child: const Text(
                         "\₹ 15",
                         style: TextStyle(
                             fontSize: 16, fontWeight: FontWeight.bold),
@@ -146,7 +145,7 @@ class _containerState extends State<container> {
                     ),
                   ]),
                 )),
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 )
               ],

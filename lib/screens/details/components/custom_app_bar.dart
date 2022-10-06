@@ -7,9 +7,8 @@ import '../../../utils/constants.dart';
 class CustomAppBar extends StatelessWidget {
   final double rating;
 
-  CustomAppBar({required this.rating});
+  const CustomAppBar({super.key, required this.rating});
 
-  @override
   // AppBar().preferredSize.height provide us the height that appy on our app bar
   Size get preferredSize => Size.fromHeight(AppBar().preferredSize.height);
 
@@ -29,7 +28,7 @@ class CustomAppBar extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(60),
                   ),
-                  primary: kPrimaryColor,
+                  foregroundColor: kPrimaryColor,
                   backgroundColor: Colors.white,
                   padding: EdgeInsets.zero,
                 ),
@@ -40,7 +39,7 @@ class CustomAppBar extends StatelessWidget {
                 ),
               ),
             ),
-            Spacer(),
+            const Spacer(),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 5),
               decoration: BoxDecoration(

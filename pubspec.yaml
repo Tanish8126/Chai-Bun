@@ -12,21 +12,20 @@ dependencies:
     sdk: flutter
   
   api_cache_manager: ^1.0.2
-  cloud_firestore: ^3.4.1
+  cloud_firestore: ^3.4.8
   cupertino_icons: ^1.0.5
-  equatable: ^2.0.3
-  firebase_core: ^1.20.0
-  firebase_auth: ^3.4.2
-  flutter_svg: ^1.1.0
-  flutter_bloc: ^8.0.1
-  flutter_login_facebook: ^1.5.0+1
-  flutter_local_notifications: ^9.7.0
-  geocoding: ^2.0.4
+  equatable: ^2.0.5
+  firebase_core: ^1.22.0
+  firebase_auth: ^3.9.0
+  flutter_svg: ^1.1.5
+  flutter_bloc: ^8.1.1
+  flutter_local_notifications: ^11.0.0
+  geocoding: ^2.0.5
   geolocator: ^9.0.1
   get_it: ^7.2.0
   get_state_manager: ^3.13.0
   google_fonts: ^3.0.1
-  google_maps_flutter: ^2.1.12
+  google_maps_flutter: ^2.2.0
   google_sign_in: ^5.4.0
   http: ^0.13.5
   intl: ^0.17.0
@@ -36,8 +35,8 @@ dependencies:
   timelines: ^0.1.0
   twitter_login: ^4.2.3
   velocity_x: ^3.3.0
-  water_drop_nav_bar: ^2.2.0+3
   webview_flutter: ^3.0.4
+  pinput: ^2.2.12
 
 dev_dependencies:
   flutter_test:

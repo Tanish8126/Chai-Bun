@@ -11,10 +11,8 @@ class Body extends StatefulWidget {
 
 class _BodyState extends State<Body> {
   final String title = "Online Agent";
-  final String SelectedUrl =
+  final String selectedUrl =
       "https://tawk.to/chat/612fd2a4649e0a0a5cd41bb1/1fehctksd";
-  final Completer<WebViewController> _controller =
-      Completer<WebViewController>();
 
   int postion = 1;
 
@@ -49,7 +47,7 @@ class _BodyState extends State<Body> {
             ),
             Container(
               color: Colors.white,
-              child: Center(child: CircularProgressIndicator()),
+              child: const Center(child: CircularProgressIndicator()),
             )
           ],
         ),

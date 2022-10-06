@@ -1,22 +1,23 @@
+// ignore_for_file: unnecessary_null_comparison, depend_on_referenced_packages
+
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:newcbapp/utils/constants.dart';
 import 'package:uuid/uuid.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:http/http.dart' as http;
 
 class GooglePlacesApiScreen extends StatefulWidget {
   static String routeName = "/googleplaces";
-  GooglePlacesApiScreen({Key? key}) : super(key: key);
+  const GooglePlacesApiScreen({Key? key}) : super(key: key);
 
   @override
   State<GooglePlacesApiScreen> createState() => _GooglePlacesApiScreenState();
 }
 
 class _GooglePlacesApiScreenState extends State<GooglePlacesApiScreen> {
-  TextEditingController _controller = TextEditingController();
-  var uuid = Uuid();
+  final TextEditingController _controller = TextEditingController();
+  var uuid = const Uuid();
   String _sessionToken = '12345';
   List<dynamic> _placesList = [];
 
@@ -56,8 +57,9 @@ class _GooglePlacesApiScreenState extends State<GooglePlacesApiScreen> {
       setState(() {
         _placesList = jsonDecode(response.body.toString())['predictions'];
       });
-    } else
+    } else {
       throw Exception('Failed to load data');
+    }
   }
 
   @override
@@ -66,7 +68,7 @@ class _GooglePlacesApiScreenState extends State<GooglePlacesApiScreen> {
       appBar: AppBar(
         backgroundColor: kMainColor,
         elevation: 0,
-        title: Text(
+        title: const Text(
           'Set Delivery Location',
           style: TextStyle(color: kPrimaryColor),
         ),
@@ -77,8 +79,8 @@ class _GooglePlacesApiScreenState extends State<GooglePlacesApiScreen> {
           children: [
             TextFormField(
               controller: _controller,
-              style: TextStyle(color: kPrimaryLightColor),
-              decoration: InputDecoration(
+              style: const TextStyle(color: kPrimaryLightColor),
+              decoration: const InputDecoration(
                   enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(color: kTextColor)),
                   hintText: "Search For Area",
@@ -92,7 +94,7 @@ class _GooglePlacesApiScreenState extends State<GooglePlacesApiScreen> {
             ),
             Expanded(
               child: ListView.builder(
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 itemCount: _placesList.length,
                 itemBuilder: (context, index) {
@@ -101,7 +103,7 @@ class _GooglePlacesApiScreenState extends State<GooglePlacesApiScreen> {
                     child: ListTile(
                       title: Text(
                         _placesList[index]['description'],
-                        style: TextStyle(color: kPrimaryLightColor),
+                        style: const TextStyle(color: kPrimaryLightColor),
                       ),
                     ),
                   );

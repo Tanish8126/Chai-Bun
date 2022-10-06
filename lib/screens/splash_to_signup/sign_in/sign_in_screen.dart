@@ -10,18 +10,18 @@ import '../../../utils/constants.dart';
 import '../../../utils/size_config.dart';
 
 class SignInScreen extends StatefulWidget {
-  final VoidCallback onTapClickListener;
-  const SignInScreen({Key? key, required this.onTapClickListener})
-      : super(key: key);
   static String routeName = "/sign_in";
+  const SignInScreen({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<SignInScreen> createState() => _SignInScreenState();
 }
 
 class _SignInScreenState extends State<SignInScreen> {
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
   String? email;
   String? password;
   bool? remember;
@@ -65,6 +65,16 @@ class _SignInScreenState extends State<SignInScreen> {
                     keyboardType: TextInputType.emailAddress,
                     style: TextStyle(color: kPrimaryLightColor),
                     controller: _emailController,
+                    // validator: (value) {
+                    //   if (value!.isEmpty) {
+                    //     addError(error: kEmailNullError);
+                    //     return "";
+                    //   } else if (!emailValidatorRegExp.hasMatch(value)) {
+                    //     addError(error: kInvalidEmailError);
+                    //     return "";
+                    //   }
+                    //   return null;
+                    // },
                     decoration: InputDecoration(
                         enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(color: kTextColor)),
@@ -77,29 +87,6 @@ class _SignInScreenState extends State<SignInScreen> {
                         hintStyle: TextStyle(color: kPrimaryLightColor),
                         labelStyle: TextStyle(color: kPrimaryColor)),
                   ),
-
-//       onSaved: (newValue) => email = newValue,
-//       onChanged: (value) {
-//         if (value.isNotEmpty) {
-//           removeError(error: kEmailNullError);
-//         } else if (emailValidatorRegExp.hasMatch(value)) {
-//           removeError(error: kInvalidEmailError);
-//         }
-//         return null;
-//       },
-//       validator: (value) {
-//         if (value!.isEmpty) {
-//           addError(error: kEmailNullError);
-//           return "";
-//         } else if (!emailValidatorRegExp.hasMatch(value)) {
-//           addError(error: kInvalidEmailError);
-//           return "";
-//         }
-//         return null;
-
-//   }
-// }
-
                   SizedBox(height: getProportionateScreenHeight(30)),
                   TextFormField(
                       controller: _passwordController,
@@ -117,9 +104,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         hintStyle: TextStyle(color: kPrimaryLightColor),
                         labelStyle: TextStyle(color: kPrimaryColor),
                       )),
-
                   SizedBox(height: getProportionateScreenHeight(30)),
-
                   Center(
                     child: InkWell(
                       onTap: () {
@@ -143,7 +128,6 @@ class _SignInScreenState extends State<SignInScreen> {
                     ),
                   ),
                   SizedBox(height: SizeConfig.screenHeight * 0.08),
-                  //SizedBox(height: getProportionateScreenHeight(20)),
                   _isSigning == true
                       ? Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -157,38 +141,6 @@ class _SignInScreenState extends State<SignInScreen> {
                         )
                       : Container(),
                   SizedBox(height: getProportionateScreenHeight(20)),
-
-                  // Row(
-                  //   children: [
-                  //     Checkbox(
-                  //       value: remember,
-                  //       checkColor: Colors.black,
-                  //       side: BorderSide(color: kTextColor),
-                  //       activeColor: kPrimaryColor,
-                  //       onChanged: (value) {
-                  //         setState(() {
-                  //           remember = value;
-                  //         });
-                  //       },
-                  //     ),
-                  //     Text(
-                  //       "Remember me",
-                  //       style: TextStyle(color: kPrimaryLightColor),
-                  //     ),
-                  //     Spacer(),
-                  //     GestureDetector(
-                  //       onTap: () => Navigator.pushNamed(
-                  //           context, ForgotPasswordScreen.routeName),
-                  //       child: Text(
-                  //         "Forgot Password",
-                  //         style: TextStyle(
-                  //             decoration: TextDecoration.underline,
-                  //             color: kPrimaryLightColor),
-                  //       ),
-                  //     )
-                  //   ],
-                  // ),
-
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -211,28 +163,6 @@ class _SignInScreenState extends State<SignInScreen> {
                     ],
                   ),
                   SizedBox(height: getProportionateScreenHeight(30)),
-
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Don’t have an account? ",
-                        style: TextStyle(
-                            fontSize: getProportionateScreenWidth(16),
-                            color: kPrimaryLightColor),
-                      ),
-                      InkWell(
-                        onTap: widget.onTapClickListener,
-                        child: Text(
-                          "Sign Up",
-                          style: TextStyle(
-                              fontSize: getProportionateScreenWidth(16),
-                              color: kPrimaryColor,
-                              decoration: TextDecoration.underline),
-                        ),
-                      )
-                    ],
-                  ),
                 ]),
               ),
             )));
@@ -258,18 +188,3 @@ class _SignInScreenState extends State<SignInScreen> {
     }
   }
 }
-//               
-//               ),
-//               FormError(errors: errors),
-//
-//               D
-//              
-//               NoAccountText(),
-//             ],
-//           )),
-//         ),
-//       ),
-//     );
-//   }
-
-//

@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -63,11 +65,11 @@ class _CurrentLocationScreenState extends State<CurrentLocationScreen> {
           infoWindow: InfoWindow(title: address)));
 
       final GoogleMapController controller = await _controller.future;
-      CameraPosition _kGooglePlex = CameraPosition(
+      CameraPosition kGooglePlex = CameraPosition(
         target: LatLng(value.latitude, value.longitude),
         zoom: 14,
       );
-      controller.animateCamera(CameraUpdate.newCameraPosition(_kGooglePlex));
+      controller.animateCamera(CameraUpdate.newCameraPosition(kGooglePlex));
       setState(() {});
     });
   }
@@ -78,7 +80,7 @@ class _CurrentLocationScreenState extends State<CurrentLocationScreen> {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.deepOrange,
-        title: Text('Flutter Google Map'),
+        title: const Text('Flutter Google Map'),
       ),
       body: SafeArea(
         child: Stack(
@@ -112,12 +114,12 @@ class _CurrentLocationScreenState extends State<CurrentLocationScreen> {
                         final GoogleMapController controller =
                             await _controller.future;
 
-                        CameraPosition _kGooglePlex = CameraPosition(
+                        CameraPosition kGooglePlex = CameraPosition(
                           target: LatLng(value.latitude, value.longitude),
                           zoom: 14,
                         );
                         controller.animateCamera(
-                            CameraUpdate.newCameraPosition(_kGooglePlex));
+                            CameraUpdate.newCameraPosition(kGooglePlex));
 
                         List<Placemark> placemarks =
                             await placemarkFromCoordinates(
@@ -143,7 +145,7 @@ class _CurrentLocationScreenState extends State<CurrentLocationScreen> {
                         decoration: BoxDecoration(
                             color: Colors.deepOrange,
                             borderRadius: BorderRadius.circular(8)),
-                        child: Center(
+                        child: const Center(
                             child: Text(
                           'Current Location',
                           style: TextStyle(color: Colors.white),

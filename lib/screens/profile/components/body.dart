@@ -2,22 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:newcbapp/screens/google_places_api_screen.dart';
 
 import '../../Settings/settings_page.dart';
-import '../../home/home_screen.dart';
 import '../../my_account/my_account.dart';
 import '../../notification/notification_screen.dart';
 import 'profile_menu.dart';
 import 'profile_pic.dart';
 
 class Body extends StatelessWidget {
+  const Body({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      padding: EdgeInsets.symmetric(vertical: 20),
+      padding: const EdgeInsets.symmetric(vertical: 20),
       child: SafeArea(
         child: Column(
           children: [
-            ProfilePic(),
-            SizedBox(height: 20),
+            const ProfilePic(),
+            const SizedBox(height: 20),
             // Expanded(
             //   child: Stack(
             //     children: [

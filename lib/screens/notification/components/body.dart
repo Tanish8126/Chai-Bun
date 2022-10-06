@@ -10,30 +10,30 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.only(left: 16, top: 25, right: 16),
+        padding: const EdgeInsets.only(left: 16, top: 25, right: 16),
         child: ListView(
           shrinkWrap: true,
           children: [
-            Text(
+            const Text(
               "Notifications",
               style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.w500,
                   color: kPrimaryColor),
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             Row(
               children: [
-                Icon(
+                const Icon(
                   Icons.volume_up_outlined,
                   color: kPrimaryColor,
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 8,
                 ),
-                Text(
+                const Text(
                   "Notifications",
                   style: TextStyle(
                       fontSize: 18,
@@ -42,18 +42,18 @@ class Body extends StatelessWidget {
                 ),
               ],
             ),
-            Divider(
+            const Divider(
               height: 15,
               thickness: 2,
               color: kMainColor,
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             buildNotificationOptionRow("New for you", true),
             buildNotificationOptionRow("Account activity", true),
             buildNotificationOptionRow("Opportunity", false),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
           ],
@@ -69,7 +69,7 @@ Row buildNotificationOptionRow(String title, bool isActive) {
     children: [
       Text(
         title,
-        style: TextStyle(
+        style: const TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.w500,
             color: kPrimaryLightColor),

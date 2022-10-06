@@ -18,12 +18,12 @@ class CustomBottomNavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color inActiveIconColor = kPrimaryLightColor;
+    const Color inActiveIconColor = kPrimaryLightColor;
     return Container(
-      padding: EdgeInsets.only(bottom: 10, top: 0),
+      padding: const EdgeInsets.only(bottom: 10, top: 0),
       alignment: Alignment.center,
       height: 30,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Color(0xFF2a180d),
       ),
       child: Row(
@@ -43,7 +43,7 @@ class CustomBottomNavBar extends StatelessWidget {
             padding: EdgeInsets.zero,
             icon: SvgPicture.asset(
               "assets/icons/Chat bubble Icon.svg",
-              color: MenuState.cart == selectedMenu
+              color: MenuState.message == selectedMenu
                   ? kPrimaryColor
                   : inActiveIconColor,
             ),

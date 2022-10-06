@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:newcbapp/screens/google_places_api_screen.dart';
 import 'package:newcbapp/screens/home/components/search_field.dart';
+import 'package:newcbapp/screens/splash_to_signup/splash/login_screen.dart';
 import 'package:newcbapp/screens/user_current_location.dart';
 import '../screens/Settings/settings_page.dart';
 import '../screens/cart/cart_screen.dart';
@@ -10,31 +11,31 @@ import '../screens/messages/messages_screen.dart';
 import '../screens/my_account/my_account.dart';
 import '../screens/notification/notification_screen.dart';
 import '../screens/profile/profile_screen.dart';
-import '../screens/splash_to_signup/complete_profile/complete_profile_screen.dart';
-import '../screens/splash_to_signup/forgot_password/forgot_password_screen.dart';
-import '../screens/splash_to_signup/login_check/main_screen.dart';
-import '../screens/splash_to_signup/otp/otp_screen.dart';
-import '../screens/splash_to_signup/splash/splash_screen.dart';
+
+import '../screens/splash_to_signup/first_screen.dart';
+import '../screens/splash_to_signup/login_check/login_check.dart';
+import '../screens/splash_to_signup/sign_in/sign_in_screen.dart';
+import '../screens/splash_to_signup/splash/components/new_screen.dart';
 
 // We use name route
 // All our routes will be available here
 final Map<String, WidgetBuilder> routes = {
   SplashScreen.routeName: (context) => SplashScreen(),
-  //SignInScreen.routeName: (context) => SignInScreen(),
-  ForgotPasswordScreen.routeName: (context) => ForgotPasswordScreen(),
+  SignInScreen.routeName: (context) => const SignInScreen(),
   // SignUpScreen.routeName: (context) => SignUpScreen(),
-  CompleteProfileScreen.routeName: (context) => CompleteProfileScreen(),
-  OtpScreen.routeName: (context) => OtpScreen(),
-  HomeScreen.routeName: (context) => HomeScreen(),
-  DetailsScreen.routeName: (context) => DetailsScreen(),
-  CartScreen.routeName: (context) => CartScreen(),
-  ProfileScreen.routeName: (context) => ProfileScreen(),
-  NotificationScreen.routeName: (context) => NotificationScreen(),
-  MessagesScreen.routeName: (context) => MessagesScreen(),
-  MainScreen.routeName: (context) => MainScreen(),
-  MyAccount.routeName: (context) => MyAccount(),
+  //OtpScreen.routeName: (context) => OtpScreen(),
+  HomeScreen.routeName: (context) => const HomeScreen(),
+  DetailsScreen.routeName: (context) => const DetailsScreen(),
+  LoginScreen.routeName: (context) => LoginScreen(),
+  NewScreen.routeName: (context) => NewScreen(),
+  CartScreen.routeName: (context) => const CartScreen(),
+  ProfileScreen.routeName: (context) => const ProfileScreen(),
+  NotificationScreen.routeName: (context) => const NotificationScreen(),
+  MessagesScreen.routeName: (context) => const MessagesScreen(),
+  LoginCheck.routeName: (context) => const LoginCheck(),
+  MyAccount.routeName: (context) => const MyAccount(),
   SettingsPage.routeName: (context) => SettingsPage(),
-  SearchField.routeName: (context) => SearchField(),
-  CurrentLocationScreen.routeName: (context) => CurrentLocationScreen(),
-  GooglePlacesApiScreen.routeName: (context) => GooglePlacesApiScreen(),
+  SearchField.routeName: (context) => const SearchField(),
+  CurrentLocationScreen.routeName: (context) => const CurrentLocationScreen(),
+  GooglePlacesApiScreen.routeName: (context) => const GooglePlacesApiScreen(),
 };

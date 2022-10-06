@@ -38,8 +38,8 @@ class _DeliveryOptionsState extends State<DeliveryOptions> {
                             _producType = value;
                           });
                         }),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 10),
+                    const Padding(
+                      padding: EdgeInsets.only(right: 10),
                       child: Text("Dine In"),
                     ),
                     Radio<ProducType>(
@@ -52,8 +52,8 @@ class _DeliveryOptionsState extends State<DeliveryOptions> {
                             _producType = value;
                           });
                         }),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 10),
+                    const Padding(
+                      padding: EdgeInsets.only(right: 10),
                       child: Text("Take Away"),
                     ),
                     Radio<ProducType>(
@@ -66,8 +66,8 @@ class _DeliveryOptionsState extends State<DeliveryOptions> {
                             _producType = value;
                           });
                         }),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 10),
+                    const Padding(
+                      padding: EdgeInsets.only(right: 10),
                       child: Text("Delivery"),
                     )
                   ],

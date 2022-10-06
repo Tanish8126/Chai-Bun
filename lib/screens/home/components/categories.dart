@@ -7,6 +7,8 @@ import '../../../utils/constants.dart';
 import '../../../utils/size_config.dart';
 
 class Categories extends StatelessWidget {
+  const Categories({super.key});
+
   @override
   Widget build(BuildContext context) {
     List<Map<String, dynamic>> categories = [

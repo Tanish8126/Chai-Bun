@@ -8,21 +8,23 @@ import 'container.dart';
 import 'discount_banner.dart';
 
 class Body extends StatelessWidget {
+  const Body({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Column(
         children: [
-          DeliveryOptions(),
-          DiscountBanner(),
-          Categories(),
+          const DeliveryOptions(),
+          const DiscountBanner(),
+          const Categories(),
           SizedBox(height: getProportionateScreenWidth(10)),
           Expanded(
             child: Stack(
               children: [
                 Container(
-                    margin: EdgeInsets.only(top: 0),
-                    decoration: BoxDecoration(
+                    margin: const EdgeInsets.only(top: 0),
+                    decoration: const BoxDecoration(
                       color: kMainColor,
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(40),
@@ -31,7 +33,7 @@ class Body extends StatelessWidget {
                 ListView.builder(
                   shrinkWrap: true,
                   itemCount: 6,
-                  itemBuilder: (context, index) => container(),
+                  itemBuilder: (context, index) => const NewContainer(),
                 )
               ],
             ),

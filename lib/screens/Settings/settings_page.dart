@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:newcbapp/screens/splash_to_signup/splash/components/new_screen.dart';
 
 import '../../components/default_button.dart';
 import '../../utils/constants.dart';
@@ -15,30 +16,30 @@ class _SettingsPageState extends State<SettingsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.only(left: 16, top: 25, right: 16),
+        padding: const EdgeInsets.only(left: 16, top: 25, right: 16),
         child: ListView(
           shrinkWrap: true,
           children: [
-            Text(
+            const Text(
               "Settings",
               style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.w500,
                   color: kPrimaryColor),
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             Row(
               children: [
-                Icon(
+                const Icon(
                   Icons.person,
                   color: kPrimaryColor,
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 8,
                 ),
-                Text(
+                const Text(
                   "Account",
                   style: TextStyle(
                       fontSize: 18,
@@ -47,12 +48,12 @@ class _SettingsPageState extends State<SettingsPage> {
                 ),
               ],
             ),
-            Divider(
+            const Divider(
               height: 15,
               thickness: 2,
               color: kMainColor,
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             buildAccountOptionRow(context, "Change password"),
@@ -60,13 +61,17 @@ class _SettingsPageState extends State<SettingsPage> {
             buildAccountOptionRow(context, "Social"),
             buildAccountOptionRow(context, "Language"),
             buildAccountOptionRow(context, "Privacy and security"),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             Center(
               child: DefaultButton(
-                press: () {
-                  FirebaseAuth.instance.signOut();
+                press: () async {
+                  await FirebaseAuth.instance.signOut();
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(builder: (context) => NewScreen()),
+                      (route) => false);
                 },
                 text: "SIGN OUT",
               ),
@@ -88,9 +93,9 @@ class _SettingsPageState extends State<SettingsPage> {
                 content: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text("Option 1"),
-                    Text("Option 2"),
-                    Text("Option 3"),
+                    const Text("Option 1"),
+                    const Text("Option 2"),
+                    const Text("Option 3"),
                   ],
                 ),
                 // actions: [
@@ -110,13 +115,13 @@ class _SettingsPageState extends State<SettingsPage> {
           children: [
             Text(
               title,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w500,
                 color: kPrimaryLightColor,
               ),
             ),
-            Icon(
+            const Icon(
               Icons.arrow_forward_ios,
               color: kPrimaryLightColor,
             ),

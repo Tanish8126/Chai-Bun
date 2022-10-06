@@ -1,13 +1,12 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:flutter/material.dart';
 
 import 'size_config.dart';
 
-const kActiveColor = Color(0xFF22A45D);
-const kAccentColor = Color(0xFFEF9920);
-const kBodyTextColor = Color(0xFF868686);
 const kDefaultShadow =
     BoxShadow(offset: Offset(0, 15), blurRadius: 27, color: Colors.black12);
-const kColor = Color(0xFFFBFBFB);
+
 const kBgColor = Colors.white;
 const Color login_bg = Color(0xFF2a180d);
 
@@ -20,6 +19,7 @@ const Duration defaultDuration = Duration(microseconds: 300);
 
 const kPrimaryColor = Color(0XFFd27842);
 const kMainColor = Color(0xFF3f2414);
+const kMainColor3 = Colors.black;
 const kMainColor2 = Color.fromARGB(158, 66, 28, 6);
 const kPrimaryLightColor = Color(0xFFFFECDF);
 const kPrimaryGradientColor = LinearGradient(

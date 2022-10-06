@@ -7,10 +7,11 @@ import 'package:newcbapp/utils/constants.dart';
 import '../../components/coustom_bottom_nav_bar.dart';
 import '../../enums.dart';
 import 'components/body.dart';
-import 'components/search_field.dart';
 
 class HomeScreen extends StatelessWidget {
   static String routeName = "/home";
+
+  const HomeScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

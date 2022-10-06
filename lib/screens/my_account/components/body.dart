@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:newcbapp/utils/constants.dart';
 
@@ -12,8 +13,11 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
+  final Mobile = FirebaseAuth.instance.currentUser!.phoneNumber;
+
   final Stream<QuerySnapshot> usersStream =
       FirebaseFirestore.instance.collection('users').snapshots();
+
   bool showPassword = false;
   @override
   Widget build(BuildContext context) {
@@ -24,7 +28,7 @@ class _BodyState extends State<Body> {
             print("Something Went Wrong");
           }
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           }
@@ -37,28 +41,29 @@ class _BodyState extends State<Body> {
 
           return Scaffold(
             body: Container(
-              padding: EdgeInsets.only(left: 16, top: 25, right: 16),
+              padding: const EdgeInsets.only(left: 16, top: 25, right: 16),
               child: GestureDetector(
                   onTap: () {
                     FocusScope.of(context).unfocus();
                   },
                   child: ListView(
                     children: [
-                      Text(
+                      const Text(
                         "Edit Profile",
                         style: TextStyle(
                             fontSize: 25,
                             fontWeight: FontWeight.w500,
                             color: kPrimaryColor),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 35,
                       ),
                       buildTextField("Full Name", "Rahul Gupta", false),
+                      buildTextField("Mobile Number", "$Mobile", false),
                       buildTextField("E-mail", "rahul@gmail.com", false),
                       buildTextField("Password", "********", true),
                       buildTextField("Location", "Yelahanka, Bangalore", false),
-                      SizedBox(
+                      const SizedBox(
                         height: 35,
                       ),
                       Center(
@@ -93,12 +98,12 @@ class _BodyState extends State<Body> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 35.0),
       child: TextField(
-        style: TextStyle(color: kPrimaryLightColor),
+        style: const TextStyle(color: kPrimaryLightColor),
         obscureText: isPasswordTextField ? showPassword : false,
         decoration: InputDecoration(
-            enabledBorder:
-                UnderlineInputBorder(borderSide: BorderSide(color: kTextColor)),
-            labelStyle: TextStyle(color: kPrimaryColor),
+            enabledBorder: const UnderlineInputBorder(
+                borderSide: BorderSide(color: kTextColor)),
+            labelStyle: const TextStyle(color: kPrimaryColor),
             suffixIcon: isPasswordTextField
                 ? IconButton(
                     onPressed: () {
@@ -106,14 +111,15 @@ class _BodyState extends State<Body> {
                         showPassword = !showPassword;
                       });
                     },
-                    icon: Icon(Icons.remove_red_eye, color: kPrimaryLightColor),
+                    icon: const Icon(Icons.remove_red_eye,
+                        color: kPrimaryLightColor),
                   )
                 : null,
-            contentPadding: EdgeInsets.only(bottom: 3),
+            contentPadding: const EdgeInsets.only(bottom: 3),
             labelText: labelText,
             floatingLabelBehavior: FloatingLabelBehavior.always,
             hintText: placeholder,
-            hintStyle: TextStyle(
+            hintStyle: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: kPrimaryLightColor)),
