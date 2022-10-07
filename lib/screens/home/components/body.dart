@@ -23,13 +23,12 @@ class Body extends StatelessWidget {
             child: Stack(
               children: [
                 Container(
-                    margin: const EdgeInsets.only(top: 0),
                     decoration: const BoxDecoration(
-                      color: kMainColor,
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(40),
-                          topRight: Radius.circular(40)),
-                    )),
+                  color: kMainColor,
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(40),
+                      topRight: Radius.circular(40)),
+                )),
                 ListView.builder(
                   shrinkWrap: true,
                   itemCount: 6,

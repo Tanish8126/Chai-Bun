@@ -45,7 +45,7 @@ class _NewContainerState extends State<NewContainer> {
               alignment: Alignment.bottomCenter,
               children: [
                 Container(
-                  height: 100,
+                  height: getProportionateScreenHeight(110),
                   decoration: BoxDecoration(
                       color: kPrimaryColor,
                       borderRadius: BorderRadius.circular(22)),
@@ -75,11 +75,9 @@ class _NewContainerState extends State<NewContainer> {
                         border: Border.all(color: kPrimaryColor),
                         borderRadius: BorderRadius.circular(10)),
                     child: Row(children: [
-                      Container(
-                        child: const Icon(
-                          Icons.remove,
-                          color: kPrimaryColor,
-                        ),
+                      const Icon(
+                        Icons.remove,
+                        color: kPrimaryColor,
                       ),
                       Container(
                         height: double.infinity,
@@ -95,11 +93,9 @@ class _NewContainerState extends State<NewContainer> {
                           ),
                         )),
                       ),
-                      Container(
-                        child: const Icon(
-                          Icons.add,
-                          color: kPrimaryColor,
-                        ),
+                      const Icon(
+                        Icons.add,
+                        color: kPrimaryColor,
                       ),
                     ]),
                   ),

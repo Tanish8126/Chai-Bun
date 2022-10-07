@@ -37,6 +37,7 @@ dependencies:
   velocity_x: ^3.3.0
   webview_flutter: ^3.0.4
   pinput: ^2.2.12
+  get: ^4.6.5
 
 dev_dependencies:
   flutter_test:

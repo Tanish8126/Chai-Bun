@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:newcbapp/controller/homescreen_controller.dart';
 
 import '../../../utils/constants.dart';
 import '../../../utils/size_config.dart';
@@ -11,6 +13,7 @@ class Categories extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(HomeScreenController());
     List<Map<String, dynamic>> categories = [
       {"icon": "assets/icons/Flash Icon.svg", "text": "Best Seller"},
       {"icon": "assets/icons/tea.svg", "text": "Chai"},
@@ -19,23 +22,30 @@ class Categories extends StatelessWidget {
       {"icon": "assets/icons/Discover.svg", "text": "More"},
     ];
     return Padding(
-      padding: EdgeInsets.only(left: 20, right: 20),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: List.generate(
-          categories.length,
-          (index) => CategoryCard(
-            icon: categories[index]["icon"],
-            text: categories[index]["text"],
-            press: () {
-              Navigator.pushNamed(
-                  context, '../../home/components/container.dart');
-            },
-          ),
-        ),
-      ),
-    );
+        padding: EdgeInsets.only(left: 20, right: 20),
+        child: GetBuilder<HomeScreenController>(builder: (value) {
+          if (!value.isLoading) {
+            return Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: List.generate(
+                controller.categoriesData.length,
+                (index) => CategoryCard(
+                  icon: categories[index]["icon"],
+                  text: controller.categoriesData[index].title,
+                  press: () {
+                    Navigator.pushNamed(
+                        context, '../../home/components/container.dart');
+                  },
+                ),
+              ),
+            );
+          } else {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+        }));
   }
 }
 
@@ -74,7 +84,7 @@ class CategoryCard extends StatelessWidget {
               text,
               textAlign: TextAlign.center,
               style: TextStyle(color: kPrimaryColor),
-            )
+            ),
           ],
         ),
       ),

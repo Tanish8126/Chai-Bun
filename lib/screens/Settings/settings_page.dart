@@ -31,15 +31,15 @@ class _SettingsPageState extends State<SettingsPage> {
               height: 40,
             ),
             Row(
-              children: [
-                const Icon(
+              children: const [
+                Icon(
                   Icons.person,
                   color: kPrimaryColor,
                 ),
-                const SizedBox(
+                SizedBox(
                   width: 8,
                 ),
-                const Text(
+                Text(
                   "Account",
                   style: TextStyle(
                       fontSize: 18,
@@ -70,7 +70,8 @@ class _SettingsPageState extends State<SettingsPage> {
                   await FirebaseAuth.instance.signOut();
                   Navigator.pushAndRemoveUntil(
                       context,
-                      MaterialPageRoute(builder: (context) => NewScreen()),
+                      MaterialPageRoute(
+                          builder: (context) => const NewScreen()),
                       (route) => false);
                 },
                 text: "SIGN OUT",
@@ -92,19 +93,12 @@ class _SettingsPageState extends State<SettingsPage> {
                 title: Text(title),
                 content: Column(
                   mainAxisSize: MainAxisSize.min,
-                  children: [
-                    const Text("Option 1"),
-                    const Text("Option 2"),
-                    const Text("Option 3"),
+                  children: const [
+                    Text("Option 1"),
+                    Text("Option 2"),
+                    Text("Option 3"),
                   ],
                 ),
-                // actions: [
-                //   FlatButton(
-                //       onPressed: () {
-                //         Navigator.of(context).pop();
-                //       },
-                //       child: Text("Close")),
-                // ],
               );
             });
       },

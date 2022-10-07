@@ -131,7 +131,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   _isSigning == true
                       ? Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
+                          children: const [
                             Text("Please wait..."),
                             SizedBox(
                               width: 10,
