@@ -64,7 +64,7 @@ class ProductDescription extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(
             horizontal: getProportionateScreenWidth(20),
-            vertical: 10,
+            vertical: getProportionateScreenWidth(10),
           ),
           child: GestureDetector(
             onTap: () {},
