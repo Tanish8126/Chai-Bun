@@ -1,13 +1,12 @@
-// ignore_for_file: prefer_const_constructors
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../components/custom_suffix_icon.dart';
-import '../../../components/socal_card.dart';
 import '../../../models/cubit/google_sign_in/google_sign_in_cubit.dart';
 import '../../../utils/constants.dart';
+import '../../../utils/custom_suffix_icon.dart';
 import '../../../utils/size_config.dart';
+import '../../../utils/socal_card.dart';
 
 class SignInScreen extends StatefulWidget {
   static String routeName = "/sign_in";
@@ -55,7 +54,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     ),
                   ),
                   SizedBox(height: SizeConfig.screenHeight * 0.02),
-                  Text(
+                  const Text(
                     "Sign in with your email and password  \nor continue with social media",
                     textAlign: TextAlign.center,
                     style: TextStyle(color: kPrimaryLightColor),
@@ -63,19 +62,9 @@ class _SignInScreenState extends State<SignInScreen> {
                   SizedBox(height: SizeConfig.screenHeight * 0.08),
                   TextFormField(
                     keyboardType: TextInputType.emailAddress,
-                    style: TextStyle(color: kPrimaryLightColor),
+                    style: const TextStyle(color: kPrimaryLightColor),
                     controller: _emailController,
-                    // validator: (value) {
-                    //   if (value!.isEmpty) {
-                    //     addError(error: kEmailNullError);
-                    //     return "";
-                    //   } else if (!emailValidatorRegExp.hasMatch(value)) {
-                    //     addError(error: kInvalidEmailError);
-                    //     return "";
-                    //   }
-                    //   return null;
-                    // },
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                         enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(color: kTextColor)),
                         fillColor: kTextColor,
@@ -91,8 +80,8 @@ class _SignInScreenState extends State<SignInScreen> {
                   TextFormField(
                       controller: _passwordController,
                       obscureText: true,
-                      style: TextStyle(color: kPrimaryLightColor),
-                      decoration: InputDecoration(
+                      style: const TextStyle(color: kPrimaryLightColor),
+                      decoration: const InputDecoration(
                         enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(color: kTextColor)),
                         fillColor: kTextColor,

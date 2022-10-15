@@ -16,17 +16,9 @@ class SplashContent extends StatelessWidget {
     return Column(
       children: <Widget>[
         Text(
-          "CHAI BUN",
-          style: TextStyle(
-            fontSize: getProportionateScreenWidth(36),
-            color: kPrimaryColor,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        Text(
           text!,
           textAlign: TextAlign.center,
-          style: const TextStyle(color: kPrimaryLightColor),
+          style: const TextStyle(color: kPrimaryLightColor, fontSize: 24),
         ),
         Image.asset(
           image!,

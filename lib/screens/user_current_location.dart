@@ -45,7 +45,6 @@ class _CurrentLocationScreenState extends State<CurrentLocationScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _markers.addAll(list);
     //loadData();

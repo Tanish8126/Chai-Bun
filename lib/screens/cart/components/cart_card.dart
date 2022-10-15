@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import '../../../models/Cart.dart';
 import '../../../utils/constants.dart';
@@ -31,25 +29,25 @@ class CartCard extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(width: 20),
+        const SizedBox(width: 20),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               cart.product.title,
-              style: TextStyle(color: kPrimaryLightColor, fontSize: 16),
+              style: const TextStyle(color: kPrimaryLightColor, fontSize: 16),
               maxLines: 2,
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text.rich(
               TextSpan(
-                text: "\₹${cart.product.price}",
-                style: TextStyle(
+                text: "₹${cart.product.price}",
+                style: const TextStyle(
                     fontWeight: FontWeight.w600, color: kPrimaryColor),
                 children: [
                   TextSpan(
                       text: " x${cart.numOfItem}",
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontWeight: FontWeight.w600, color: kPrimaryColor)),
                 ],
               ),

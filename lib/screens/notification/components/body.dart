@@ -25,15 +25,15 @@ class Body extends StatelessWidget {
               height: 40,
             ),
             Row(
-              children: [
-                const Icon(
+              children: const [
+                Icon(
                   Icons.volume_up_outlined,
                   color: kPrimaryColor,
                 ),
-                const SizedBox(
+                SizedBox(
                   width: 8,
                 ),
-                const Text(
+                Text(
                   "Notifications",
                   style: TextStyle(
                       fontSize: 18,

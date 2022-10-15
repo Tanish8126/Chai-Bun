@@ -3,7 +3,7 @@ import 'package:razorpay_flutter/razorpay_flutter.dart';
 
 class PaymentPage extends StatefulWidget {
   static String routeName = "/payment";
-  PaymentPage({Key? key}) : super(key: key);
+  const PaymentPage({Key? key}) : super(key: key);
 
   @override
   State<PaymentPage> createState() => _PaymentPageState();

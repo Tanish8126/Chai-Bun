@@ -1,9 +1,9 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:flutter/material.dart';
-import 'package:newcbapp/utils/constants.dart';
 
-import '../../components/default_button.dart';
+import '../../utils/constants.dart';
+import '../../utils/default_button.dart';
 import '../../utils/size_config.dart';
 import 'login_check/login_check.dart';
 

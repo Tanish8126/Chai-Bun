@@ -1,5 +1,3 @@
-// ignore_for_file: constant_identifier_names
-
 import 'package:flutter/material.dart';
 
 import 'size_config.dart';
@@ -8,10 +6,6 @@ const kDefaultShadow =
     BoxShadow(offset: Offset(0, 15), blurRadius: 27, color: Colors.black12);
 
 const kBgColor = Colors.white;
-const Color login_bg = Color(0xFF2a180d);
-
-const Color signup_bg = Color(0XFFd27842);
-
 const double defaultPadding = 16.0;
 const Duration defaultDuration = Duration(microseconds: 300);
 

@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:newcbapp/utils/constants.dart';
@@ -13,84 +12,62 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
-  final Mobile = FirebaseAuth.instance.currentUser!.phoneNumber;
-
-  final Stream<QuerySnapshot> usersStream =
-      FirebaseFirestore.instance.collection('users').snapshots();
+  final mobile = FirebaseAuth.instance.currentUser!.phoneNumber;
 
   bool showPassword = false;
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder<QuerySnapshot>(
-        stream: usersStream,
-        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-          if (snapshot.hasError) {
-            print("Something Went Wrong");
-          }
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          }
-
-          final List storedocs = [];
-          snapshot.data!.docs.map((DocumentSnapshot document) {
-            Map a = document.data() as Map<String, dynamic>;
-            storedocs.add(a);
-          }).toList();
-
-          return Scaffold(
-            body: Container(
-              padding: const EdgeInsets.only(left: 16, top: 25, right: 16),
-              child: GestureDetector(
-                  onTap: () {
-                    FocusScope.of(context).unfocus();
-                  },
-                  child: ListView(
-                    children: [
-                      const Text(
-                        "Edit Profile",
-                        style: TextStyle(
-                            fontSize: 25,
-                            fontWeight: FontWeight.w500,
-                            color: kPrimaryColor),
-                      ),
-                      const SizedBox(
-                        height: 35,
-                      ),
-                      buildTextField("Full Name", "Rahul Gupta", false),
-                      buildTextField("Mobile Number", "$Mobile", false),
-                      buildTextField("E-mail", "rahul@gmail.com", false),
-                      buildTextField("Password", "********", true),
-                      buildTextField("Location", "Yelahanka, Bangalore", false),
-                      const SizedBox(
-                        height: 35,
-                      ),
-                      Center(
-                        child: InkWell(
-                          onTap: () {},
-                          child: Container(
-                            width: double.infinity,
-                            height: getProportionateScreenHeight(50),
-                            decoration: BoxDecoration(
-                                color: kPrimaryColor,
-                                borderRadius: BorderRadius.circular(20)),
-                            child: Center(
-                              child: Text(
-                                "Save",
-                                style: TextStyle(
-                                    fontSize: getProportionateScreenWidth(18),
-                                    color: Colors.white),
-                              ),
-                            ),
-                          ),
+    return Scaffold(
+      body: Container(
+        padding: const EdgeInsets.only(left: 16, top: 25, right: 16),
+        child: GestureDetector(
+            onTap: () {
+              FocusScope.of(context).unfocus();
+            },
+            child: ListView(
+              children: [
+                const Text(
+                  "Edit Profile",
+                  style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.w500,
+                      color: kPrimaryColor),
+                ),
+                const SizedBox(
+                  height: 35,
+                ),
+                buildTextField("Full Name", "Rahul Gupta", false),
+                buildTextField("Mobile Number", "$mobile", false),
+                buildTextField("E-mail", "rahul@gmail.com", false),
+                buildTextField("Password", "********", true),
+                buildTextField("Location", "Yelahanka, Bangalore", false),
+                const SizedBox(
+                  height: 35,
+                ),
+                Center(
+                  child: InkWell(
+                    onTap: () {},
+                    child: Container(
+                      width: double.infinity,
+                      height: getProportionateScreenHeight(50),
+                      decoration: BoxDecoration(
+                          color: kPrimaryColor,
+                          borderRadius: BorderRadius.circular(20)),
+                      child: Center(
+                        child: Text(
+                          "Save",
+                          style: TextStyle(
+                              fontSize: getProportionateScreenWidth(18),
+                              color: Colors.white),
                         ),
                       ),
-                    ],
-                  )),
-            ),
-          );
-        });
+                    ),
+                  ),
+                ),
+              ],
+            )),
+      ),
+    );
   }
 
   Widget buildTextField(

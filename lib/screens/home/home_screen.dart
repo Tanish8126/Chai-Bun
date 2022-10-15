@@ -1,11 +1,10 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:newcbapp/screens/google_places_api_screen.dart';
 import 'package:newcbapp/screens/home/components/search_field.dart';
 import 'package:newcbapp/utils/constants.dart';
 
-import '../../components/coustom_bottom_nav_bar.dart';
-import '../../enums.dart';
+import '../../utils/coustom_bottom_nav_bar.dart';
+import '../../utils/enums.dart';
 import 'components/body.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -23,13 +22,13 @@ class HomeScreen extends StatelessWidget {
             child: Column(
               children: [
                 Row(
-                  children: [
+                  children: const [
                     Text("Deliver To",
                         style: TextStyle(color: kPrimaryLightColor)),
                     Icon(Icons.arrow_drop_down),
                   ],
                 ),
-                Align(
+                const Align(
                     alignment: Alignment.topLeft,
                     child: Text(
                       "Yelahanka",
@@ -51,7 +50,7 @@ class HomeScreen extends StatelessWidget {
                 onTap: () {
                   Navigator.pushNamed(context, SearchField.routeName);
                 },
-                child: Icon(
+                child: const Icon(
                   Icons.search,
                   color: kPrimaryLightColor,
                   size: 40,
@@ -59,8 +58,9 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ]),
-      body: Body(),
-      bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.home),
+      body: const Body(),
+      bottomNavigationBar:
+          const CustomBottomNavBar(selectedMenu: MenuState.home),
     );
   }
 }

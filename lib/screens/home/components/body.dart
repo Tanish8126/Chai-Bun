@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:newcbapp/controller/homescreen_controller.dart';
 import 'package:newcbapp/screens/home/components/delivery_options.dart';
 
 import '../../../utils/constants.dart';
@@ -12,33 +14,56 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Column(
-        children: [
-          const DeliveryOptions(),
-          const DiscountBanner(),
-          const Categories(),
-          SizedBox(height: getProportionateScreenWidth(10)),
-          Expanded(
-            child: Stack(
-              children: [
-                Container(
-                    decoration: const BoxDecoration(
-                  color: kMainColor,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(40),
-                      topRight: Radius.circular(40)),
-                )),
-                ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: 6,
-                  itemBuilder: (context, index) => const NewContainer(),
-                )
-              ],
+    final controller = Get.put(HomeScreenController());
+    return SingleChildScrollView(
+      child: SafeArea(
+        child: Column(
+          children: [
+            const DeliveryOptions(),
+            const DiscountBanner(),
+            const Categories(),
+            SizedBox(height: getProportionateScreenWidth(10)),
+            SingleChildScrollView(
+              child: Expanded(
+                child: Stack(
+                  children: [
+                    Container(
+                        decoration: const BoxDecoration(
+                          color: kMainColor,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(40),
+                              topRight: Radius.circular(40)),
+                        ),
+                        child:
+                            GetBuilder<HomeScreenController>(builder: (value) {
+                          if (!value.isLoading) {
+                            return Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: List.generate(
+                                controller.productsData.length,
+                                (index) => NewContainer(
+                                  serves: controller.productsData[index].serves,
+                                  size: controller.productsData[index].size,
+                                  price: controller.productsData[index].price,
+                                  image: controller.productsData[index].image,
+                                  name: controller.productsData[index].name,
+                                ),
+                              ),
+                            );
+                          } else {
+                            return const Center(
+                              child: CircularProgressIndicator(),
+                            );
+                          }
+                        })),
+                    SizedBox(height: getProportionateScreenWidth(30)),
+                  ],
+                ),
+              ),
             ),
-          ),
-          SizedBox(height: getProportionateScreenWidth(30)),
-        ],
+          ],
+        ),
       ),
     );
   }

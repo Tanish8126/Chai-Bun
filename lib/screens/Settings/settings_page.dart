@@ -1,17 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:newcbapp/screens/splash_to_signup/splash/components/new_screen.dart';
 
-import '../../components/default_button.dart';
 import '../../utils/constants.dart';
+import '../../utils/default_button.dart';
+import '../splash_to_signup/splash/components/new_screen.dart';
 
-class SettingsPage extends StatefulWidget {
+class SettingsPage extends StatelessWidget {
   static String routeName = "/settings";
-  @override
-  _SettingsPageState createState() => _SettingsPageState();
-}
 
-class _SettingsPageState extends State<SettingsPage> {
+  const SettingsPage({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,6 +65,7 @@ class _SettingsPageState extends State<SettingsPage> {
               child: DefaultButton(
                 press: () async {
                   await FirebaseAuth.instance.signOut();
+                  // ignore: use_build_context_synchronously
                   Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:newcbapp/components/coustom_bottom_nav_bar.dart';
-import 'package:newcbapp/enums.dart';
+import 'package:newcbapp/utils/coustom_bottom_nav_bar.dart';
+import 'package:newcbapp/utils/enums.dart';
 
 import 'components/body.dart';
 

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:newcbapp/screens/profile/profile_screen.dart';
 
-import '../enums.dart';
+import '../screens/profile/profile_screen.dart';
+import 'enums.dart';
 import '../screens/cart/cart_screen.dart';
 import '../screens/home/home_screen.dart';
 import '../screens/messages/messages_screen.dart';
-import '../utils/constants.dart';
+import 'constants.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
   const CustomBottomNavBar({
@@ -22,7 +22,7 @@ class CustomBottomNavBar extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.only(bottom: 10, top: 0),
       alignment: Alignment.center,
-      height: 30,
+      height: 50,
       decoration: const BoxDecoration(
         color: Color(0xFF2a180d),
       ),

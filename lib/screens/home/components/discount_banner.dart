@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 
 import '../../../utils/constants.dart';
@@ -26,9 +24,9 @@ class DiscountBanner extends StatelessWidget {
       ),
       child: Text.rich(
         TextSpan(
-          style: TextStyle(color: Colors.white),
+          style: const TextStyle(color: Colors.white),
           children: [
-            TextSpan(text: "A Summer Surpise\n"),
+            const TextSpan(text: "A Summer Surpise\n"),
             TextSpan(
               text: "Cashback 20%",
               style: TextStyle(

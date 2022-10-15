@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -22,7 +20,7 @@ class Categories extends StatelessWidget {
       {"icon": "assets/icons/Discover.svg", "text": "More"},
     ];
     return Padding(
-        padding: EdgeInsets.only(left: 20, right: 20),
+        padding: const EdgeInsets.only(left: 20, right: 20),
         child: GetBuilder<HomeScreenController>(builder: (value) {
           if (!value.isLoading) {
             return Row(
@@ -41,7 +39,7 @@ class Categories extends StatelessWidget {
               ),
             );
           } else {
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           }
@@ -62,7 +60,6 @@ class CategoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //final List<Product> products = Product.products.where((product) => product.tags.contains(category.name)).toList();
     return GestureDetector(
       onTap: press,
       child: SizedBox(
@@ -74,16 +71,16 @@ class CategoryCard extends StatelessWidget {
               height: getProportionateScreenWidth(40),
               width: getProportionateScreenWidth(45),
               decoration: BoxDecoration(
-                color: Color(0xFFFFECDF),
+                color: const Color(0xFFFFECDF),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: SvgPicture.asset(icon),
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             Text(
               text,
               textAlign: TextAlign.center,
-              style: TextStyle(color: kPrimaryColor),
+              style: const TextStyle(color: kPrimaryColor),
             ),
           ],
         ),

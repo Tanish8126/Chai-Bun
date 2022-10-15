@@ -5,7 +5,7 @@ import 'package:newcbapp/screens/splash_to_signup/splash/login_screen.dart';
 import 'package:newcbapp/screens/user_current_location.dart';
 import '../screens/Settings/settings_page.dart';
 import '../screens/cart/cart_screen.dart';
-import '../screens/details/details_screen.dart';
+
 import '../screens/home/home_screen.dart';
 import '../screens/messages/messages_screen.dart';
 import '../screens/my_account/my_account.dart';
@@ -20,12 +20,9 @@ import '../screens/splash_to_signup/splash/components/new_screen.dart';
 // We use name route
 // All our routes will be available here
 final Map<String, WidgetBuilder> routes = {
-  SplashScreen.routeName: (context) => SplashScreen(),
+  SplashScreen.routeName: (context) => const SplashScreen(),
   SignInScreen.routeName: (context) => const SignInScreen(),
-  // SignUpScreen.routeName: (context) => SignUpScreen(),
-  //OtpScreen.routeName: (context) => OtpScreen(),
   HomeScreen.routeName: (context) => const HomeScreen(),
-  DetailsScreen.routeName: (context) => const DetailsScreen(),
   LoginScreen.routeName: (context) => const LoginScreen(),
   NewScreen.routeName: (context) => const NewScreen(),
   CartScreen.routeName: (context) => const CartScreen(),
@@ -34,7 +31,7 @@ final Map<String, WidgetBuilder> routes = {
   MessagesScreen.routeName: (context) => const MessagesScreen(),
   LoginCheck.routeName: (context) => const LoginCheck(),
   MyAccount.routeName: (context) => const MyAccount(),
-  SettingsPage.routeName: (context) => SettingsPage(),
+  SettingsPage.routeName: (context) => const SettingsPage(),
   SearchField.routeName: (context) => const SearchField(),
   CurrentLocationScreen.routeName: (context) => const CurrentLocationScreen(),
   GooglePlacesApiScreen.routeName: (context) => const GooglePlacesApiScreen(),
