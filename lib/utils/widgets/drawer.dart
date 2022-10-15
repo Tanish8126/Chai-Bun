@@ -9,15 +9,15 @@ class MyDrawer extends StatelessWidget {
     return Drawer(
         child: ListView(
       padding: EdgeInsets.zero,
-      children: [
-        const DrawerHeader(
+      children: const [
+        DrawerHeader(
             padding: EdgeInsets.zero,
             child: UserAccountsDrawerHeader(
               margin: EdgeInsets.zero,
               accountEmail: Text("tanish@gmail.com"),
               accountName: Text("Tanish"),
             )),
-        const ListTile(
+        ListTile(
           leading: Icon(
             CupertinoIcons.ant_circle,
             color: Colors.black,
@@ -27,7 +27,7 @@ class MyDrawer extends StatelessWidget {
             textScaleFactor: 1.2,
           ),
         ),
-        const ListTile(
+        ListTile(
           leading: Icon(
             CupertinoIcons.profile_circled,
             color: Colors.black,
@@ -37,7 +37,7 @@ class MyDrawer extends StatelessWidget {
             textScaleFactor: 1.2,
           ),
         ),
-        const ListTile(
+        ListTile(
           leading: Icon(
             CupertinoIcons.hammer,
             color: Colors.black,
@@ -47,7 +47,7 @@ class MyDrawer extends StatelessWidget {
             textScaleFactor: 1.2,
           ),
         ),
-        const ListTile(
+        ListTile(
           leading: Icon(
             CupertinoIcons.home,
             color: Colors.black,

@@ -33,7 +33,7 @@ class _NewContainerState extends State<NewContainer> {
             return Center(child: Text(snapshot.error.toString()));
           }
           if (snapshot.connectionState == ConnectionState.active) {
-            QuerySnapshot querySnapshot = snapshot.data;
+            //QuerySnapshot querySnapshot = snapshot.data;
           }
           //return Center(child: CircularProgressIndicator());
           return Container(

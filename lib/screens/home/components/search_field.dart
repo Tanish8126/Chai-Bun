@@ -25,7 +25,7 @@ class _SearchFieldState extends State<SearchField> {
           padding: const EdgeInsets.only(left: 10, right: 20, top: 10),
           child: TextFormField(
             style: const TextStyle(color: kPrimaryLightColor),
-            onChanged: (value) => print(value),
+            onChanged: (value) {}, //print(value),
             decoration: InputDecoration(
                 contentPadding: EdgeInsets.symmetric(
                     horizontal: getProportionateScreenWidth(20),

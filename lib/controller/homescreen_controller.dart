@@ -11,8 +11,8 @@ class HomeScreenController extends GetxController {
 
   void getData() async {
     await Future.wait([getCategoryData()]).then((value) {
-      print("data");
-      print(categoriesData[0].image);
+      //print("data");
+      //print(categoriesData[0].image);
       isLoading = false;
       update();
     });
@@ -27,7 +27,8 @@ class HomeScreenController extends GetxController {
 
   @override
   void onInit() {
-    // TODO: implement onInit
+    super.onInit();
+
     getData();
   }
 }

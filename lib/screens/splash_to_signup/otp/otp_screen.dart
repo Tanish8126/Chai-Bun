@@ -114,7 +114,7 @@ class _OtpScreenState extends State<OtpScreen> {
           });
         },
         verificationFailed: (FirebaseAuthException e) {
-          print(e.message);
+          //  print(e.message);
         },
         codeSent: (String? verficationID, int? resendToken) {
           setState(() {
@@ -131,7 +131,6 @@ class _OtpScreenState extends State<OtpScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _verifyPhone();
   }

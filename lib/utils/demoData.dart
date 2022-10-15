@@ -1,5 +1,3 @@
-// It contains all our demo data that we used
-
 List<String> demoBigImage = [
   "assets/images/sale1.jpg",
   "assets/images/sale2.jpg",

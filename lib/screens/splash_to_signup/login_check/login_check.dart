@@ -21,7 +21,7 @@ class LoginCheck extends StatelessWidget {
           if (snapshot.hasData) {
             return const HomeScreen();
           } else {
-            return NewScreen();
+            return const NewScreen();
           }
         });
   }

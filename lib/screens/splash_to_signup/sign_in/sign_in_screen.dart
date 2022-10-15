@@ -184,7 +184,7 @@ class _SignInScreenState extends State<SignInScreen> {
         });
       });
     } catch (e) {
-      print("some error $e");
+      // print("some error $e");
     }
   }
 }

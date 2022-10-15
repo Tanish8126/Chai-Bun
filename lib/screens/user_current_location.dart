@@ -23,7 +23,7 @@ class _CurrentLocationScreenState extends State<CurrentLocationScreen> {
     await Geolocator.requestPermission()
         .then((value) {})
         .onError((error, stackTrace) {
-      print(error.toString());
+      // print(error.toString());
     });
 
     return await Geolocator.getCurrentPosition();
@@ -126,13 +126,8 @@ class _CurrentLocationScreenState extends State<CurrentLocationScreen> {
                                 value.latitude, value.longitude);
 
                         final add = placemarks.first;
-                        address = add.locality.toString() +
-                            " " +
-                            add.administrativeArea.toString() +
-                            " " +
-                            add.subAdministrativeArea.toString() +
-                            " " +
-                            add.country.toString();
+                        address =
+                            "${add.locality} ${add.administrativeArea} ${add.subAdministrativeArea} ${add.country}";
 
                         setState(() {});
                       });
